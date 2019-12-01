@@ -1,6 +1,6 @@
 # This is a multi-stage Dockerfile and requires >= Docker 17.05
 # https://docs.docker.com/engine/userguide/eng-image/multistage-build/
-FROM gobuffalo/buffalo:v0.15.2 as builder
+FROM gobuffalo/buffalo:v0.15.3 as builder
 
 RUN mkdir -p $GOPATH/src/github.com/h3rby7/reman
 WORKDIR $GOPATH/src/github.com/h3rby7/reman
@@ -10,6 +10,7 @@ ADD package.json .
 ADD yarn.lock .
 RUN yarn install --no-progress
 ADD . .
+ENV GO111MODULES=on
 RUN go get ./...
 RUN buffalo build --static -o /bin/app
 
