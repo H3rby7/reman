@@ -1,0 +1,13 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "buffalo";
+@import "events";
+@import "navigation";
+
+.tz-info {
+  display: block;
+  text-align: center;
+  border: 2px solid #bb0900;
+  padding: 1rem;
+  margin: 2rem 0;
+}

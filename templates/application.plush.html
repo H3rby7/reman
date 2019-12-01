@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Buffalo - Reman</title>
+  <base href="/reman/"/>
+  <link href="<%= asset_path("application.css") %>" media="screen" rel="stylesheet" />
+  <meta name="csrf-param" content="authenticity_token"/>
+  <meta name="csrf-token" content="<%= authenticity_token %>"/>
+  <link rel="icon" href="<%= asset_path("images/favicon.ico") %>">
+</head>
+<body>
+
+<div class="container">
+  <%= partial("flash.html") %>
+  <%= yield %>
+</div>
+
+<script src="<%= asset_path("application.js") %>" type="text/javascript"></script>
+</body>
+</html>

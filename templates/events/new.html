@@ -1,0 +1,9 @@
+<div class="page-header">
+  <h1>New Event</h1>
+  <p>Creates a new blocker and asks App to not take any potentially destabilizing actions in the given time-block</p>
+</div>
+
+<%= formFor(event, {action: remanEventsPath(), method: "POST"}) { %>
+  <%= partial("events/form.html") %>
+  <%= linkTo(remanEventsPath(), {class: "btn btn-warning", "data-confirm": "Are you sure?", body: "Cancel"}) %>
+<% } %>

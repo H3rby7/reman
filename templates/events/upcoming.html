@@ -1,0 +1,63 @@
+<div class="page-header">
+  <h1>Upcoming Events</h1>
+  <p>Use this page to figure out, if you can deploy to App in this environment or not.</p>
+</div>
+<%= partial("tz_info.html") %>
+<div class="stable-table-wrapper">
+  <div class="legend">
+    <table>
+      <tr><th colspan="2">Table Legend, Can I deploy App?</th></tr>
+      <tr>
+        <td class="changeable">Yes</td>
+        <td class="stable">No</td>
+      </tr>
+    </table>
+  </div>
+  <div class="stable-table">
+    <table>
+      <tr>
+        <%= for (slot) in slots { %>
+        <td><%= slot.Start %></td>
+        <% } %>
+      </tr>
+      <tr>
+        <%= for (slot) in slots { %>
+          <%= if (slot.NeedsToBeStable) { %>
+            <td class="stable"></td>
+          <% } else { %>
+            <td class="changeable"></td>
+          <% } %>
+        <% } %>
+      </tr>
+    </table>
+  </div>
+</div>
+<br/>
+<table class="table table-striped">
+  <thead>
+  <th>Title</th>
+  <th>StartDate</th>
+  <th>EndDate</th>
+  </thead>
+  <tbody>
+  <%= for (event) in events { %>
+  <tr>
+    <td><%= event.Title %></td>
+    <td><%= event.StartDate %></td>
+    <td><%= event.EndDate %></td>
+  </tr>
+  <% } %>
+  </tbody>
+</table>
+<ul class="list-unstyled list-inline">
+  <li>
+    <%= linkTo(newRemanEventsPath(), {class: "btn btn-primary"}) { %>
+    Create New Event
+    <% } %>
+  </li>
+  <li>
+    <%= linkTo(remanEventsPath(), {class: "btn btn-info"}) { %>
+    All Events
+    <% } %>
+  </li>
+</ul>

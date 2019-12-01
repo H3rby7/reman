@@ -1,0 +1,19 @@
+---
+development:
+  dialect: postgres
+  database: reman_development
+  user: postgres
+  password: postgres
+  host: 127.0.0.1
+  pool: 5
+
+test:
+  url: {{envOr "TEST_DATABASE_URL" "postgres://reman:reman@127.0.0.1:5432/reman_test?sslmode=disable"}}
+
+production:
+  url: {{envOr "DATABASE_URL" "postgres://reman:reman@127.0.0.1:5432/reman_production?sslmode=disable"}}
+
+# Testing the production container against the local DB as put up by docker-compose
+
+local-production:
+  url: {{envOr "DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:5432/reman_production?sslmode=disable"}}

@@ -1,0 +1,46 @@
+form#event-form {
+  input {
+    width: 100%;
+  }
+}
+
+input[type="date"] {
+  -webkit-appearance: none;
+  &::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+  }
+}
+
+// UPCOMING events page
+
+div.stable-table-wrapper {
+  .legend {
+    margin-bottom: 2rem;
+    td {
+      width: 8rem;
+    }
+  }
+  div.stable-table {
+    width: 100%;
+    overflow-x: scroll;
+    table {
+      min-width: 100%;
+      td {
+        padding-right: 1rem;
+        border-left: 1px solid black;
+      }
+    }
+  }
+  td {
+    text-align: center;
+    vertical-align: middle;
+    height: 3rem;
+    &.changeable {
+      background-color: #00bb35;
+    }
+    &.stable {
+      background-color: #bb0900;
+    }
+  }
+}

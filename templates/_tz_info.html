@@ -1,0 +1,15 @@
+<div class="tz-info">
+  <h5>All times are in UTC - For reference: The time in UTC is now <%= now %></h5>
+  <p class="tz-info-your-zone">You are X minutes behind/ahead of UTC time</p>
+  <script type="application/javascript">
+    (() => {
+      const offsetInMinutes = new Date().getTimezoneOffset();
+      const verb = offsetInMinutes < 0 ? "ahead" : "behind";
+      const text = "You are " + Math.abs(offsetInMinutes) + " minutes " + verb + " of UTC time";
+      const elements = document.getElementsByClassName("tz-info-your-zone");
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].innerHTML = text;
+      }
+    })()
+  </script>
+</div>
