@@ -1,3 +1,13 @@
+# Release Manager
+
+Simple MVP Tool to "block" release times for an app
+
+## Screenshots
+
+![Creating Events](./docs/img/new_event.png)
+
+![View Events](./docs/img/upcoming.png)
+
 # Install
 
 !!! Follow [Installation Readme](INSTALLATION.md) !!!
@@ -13,7 +23,7 @@ open up the "database.yml" file and edit it to use the correct usernames, passwo
 
 Ok, so you've edited the "database.yml" file and started your database, now Buffalo can create the databases in that file for you:
 
-	buffalo pop create -e development
+	buffalo pop create
 	
 ### Update database schema
 
